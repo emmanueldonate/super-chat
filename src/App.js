@@ -4,12 +4,13 @@ import './App.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/analytics';
 
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyCCiMM1YSl8-xL8gMTHN9g19jkFl-raUH0",
+  apiKey: "-",
   authDomain: "super-chat-73a4c.firebaseapp.com",
   projectId: "super-chat-73a4c",
   storageBucket: "super-chat-73a4c.appspot.com",
@@ -40,6 +41,7 @@ function App() {
 function SignIn() {
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
 
   }
 
